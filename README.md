@@ -8,6 +8,17 @@ esptool.py is Free Software under a GPLv2 license.
 
 [![Build Status](https://travis-ci.org/espressif/esptool.svg?branch=master)](https://travis-ci.org/espressif/esptool)
 
+### brief explanation
+- Install Python
+- Install pip : pip install pyserial
+-Read size memory : py esptool.py --port COM4 flash_id
+-Read / backup firmware :
+1MB : py esptool.py -b 115200 --port COM4 read_flash 0x000000 0x100000 Name_File.bin
+4MB : py esptool.py -b 115200 --port COM4 read_flash 0x000000 0x400000 Name_File.bin
+-Write / restore 1MB / 4MB: 
+-py esptool.py -b 115200 --port COM4 write_flash --flash_freq 80m 0x000000 Name_File.bin
+-py esptool.py -b 115200 --port COM4 write_flash --flash_freq 80m 0x000000 flash_4M_Name_File.bin
+
 ## Installation / dependencies
 
 ### Easy Installation
